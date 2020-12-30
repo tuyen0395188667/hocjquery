@@ -1,0 +1,40 @@
+<!-- jQuery Attributes - removeAttr() -->
+<!-- Cú pháp của hàm removeAttr() như sau:$('selector').removeAttr('attr_name'). Sau khi chạy đoạn code này thì đối tượng selector sẽ bị xóa đi thuộc tính attr_name.  -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    </head>
+    <body>
+      <input type="textbox" id="inputid" value="Giá trị input"/> Ăn <br/>
+       
+      <input type="button" id="view1" value="Xóa Type"/>
+      <input type="button" id="view2" value="Thêm vào thuộc tính type = radio"/>
+       
+      <script language="javascript">
+         
+            // Bắt đầu code jquery
+            $(document).ready(function()
+            {
+                // Xóa thuộc tính type khi click vào btb 1
+                $('#view1').click(function()
+                {
+                    $('#inputid').removeAttr('value');
+                });
+
+                // Thêm thuộc tính type = radio
+                $('#view2').click(function()
+                {
+                    $('#inputid').attr('type', 'radio');
+                });
+
+            });
+         
+      </script>
+       
+    </body>
+</html>

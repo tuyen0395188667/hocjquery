@@ -1,0 +1,42 @@
+<!-- Hàm prop() trong jquery cũng dùng để lấy các thuộc tính của thẻ, tuy nhiên cách trả về kết quả lại khác một xíu. Đối với những thuộc tính có dạng true/false thì thay vì trả về giá trị của thuộc tính như hàm attr() thì nó sẽ trả về true hoặc false. -->
+<!-- 
+    Cả hai hàm attr() và prop() đều có một mục đích là xử lý lấy và gán giá trị cho các thuộc tính trong thẻ HTML. 
+    Tuy nhiên ở hàm prop() thì hơi khác một xíu đó là nó sẽ trả về true hoặc false cho những thuộc tính có kiểu true/false như checked, selected -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    </head>
+    <body>
+      <h1>Ví dụ 2</h1>
+      <strong>Sở thích của bạn là gì? </strong> <br/>
+      <input type="checkbox" id="an" name="sothich" value="1" checked/> Ăn <br/>
+       
+      <input type="button" id="view1" value="Xem Name"/>
+      <input type="button" id="view2" value="Kiểm tra có check hay không"/>
+       
+      <script language="javascript">
+         
+            // Bắt đầu code jquery
+            $(document).ready(function()
+            {
+                // Khi click vào button có id = view1
+                $('#view1').click(function()
+                {
+                    alert($('#an').prop('name'));
+                });
+
+                // Khi click vào button có id = view2
+                $('#view2').click(function()
+                {
+                    alert($('#an').prop('checked'));
+                });       
+            });
+         
+      </script>
+       
+    </body>
+</html>

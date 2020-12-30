@@ -1,0 +1,49 @@
+<!-- Jquery Attributes - addclass() -removeclass() -->
+
+<!-- Hàm addClass() có tác dụng thêm class cho đối tượng Object HTML nào đó. -->
+<!-- Hàm này removeClass() có tác dụng xóa class cho đối tượng Object HTML nào đó. -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        <style>
+            .active{
+                border: solid 1px;
+                color:red;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="font-style: initial">Xin chào các bạn</h1>
+         
+        <input type="button" id="addclass-button" value="$.addClass('active')" /> 
+        <input type="button" id="removeclass-button" value="$.removeClass('active')" />
+         
+        <script language="javascript">
+             
+            // Sự kiện onload trong Jquery
+            $(document).ready(function()
+            {
+                //Thêm class
+                $('#addclass-button').click(function(){
+
+                    // Thêm class active vao the h1
+                    $('h1').addClass('active');
+
+                });
+                // RemoveClass
+                $('#removeclass-button').click(function()
+                {
+                    // Remove class active the h1
+                    $('h1').removeClass('active');
+                });
+            });
+             
+        </script>
+    </body>
+</html>

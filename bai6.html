@@ -1,0 +1,50 @@
+<!-- jQuery Attributes - html() -->
+<!-- Hàm html() jquery dùng để lấy nội dung HTML bên trong một thẻ nào đó. Nếu selector bạn truyền vào trả về là một danh sách thì nó sẽ lấy nội dung HTML của phần tử đầu tiên. -->
+
+
+<!-- 
+    Dùng lấy nội dung (get): $('selector').html()
+    Dùng thiết lập nội dung (set): $('selector').html('noi dung ben trong')  -->
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Đổi màu nhé</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+            <style>
+                #content1{
+                    height: 200px; background:red
+                }
+                #content2{
+                    height: 200px; background:yellow
+                }
+            </style>
+            
+            <script language="javascript">  
+            $(document).ready(function()
+            {
+                $('#button').click(function(){
+                     
+                    // Lấy nội dung
+                    var content1 = $('#content1').html();
+                    var content2 = $('#content2').html();
+     
+                    // Thực hiện đổi nội dung
+                    $('#content1').html(content2);
+                    $('#content2').html(content1);
+                     
+                });
+            });
+            </script>
+        </head>
+        <body>
+            <div id="content1">
+                <h1>Chào mừng các bạn</h1>
+            </div>
+            <div id="content2">
+                <h1>Đến với <a href="https://freetuts.net">freetuts.net</a></h1>
+            </div>
+            <input type="button" value="Hoán đổi nội dung" id="button"/>
+        </body>
+    </html>

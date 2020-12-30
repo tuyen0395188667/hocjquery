@@ -1,0 +1,54 @@
+<!-- jQuery Attributes - hasClass() -->
+<!-- Hàm hasClass() dùng để kiểm tra một đối tượng HTML có tồn tại className nào đó hay không? -->
+
+
+<!-- $('selector').hasClass(className) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Đổi màu nhé</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        <style type="text/css">
+            .yellow{
+                background: yellow;
+                height: 200px;
+            }
+            
+            .red{
+                background: red;
+                height: 200px;
+            }
+        </style>
+        <script language="javascript">
+            
+        $(document).ready(function(){
+
+            // Nếu click vào button đảo ngược
+            $('#button-dao-nguoc').click(function(){
+
+                // Lấy đối tượng cần thực thi
+                var object = $('div');
+
+                // Lặp qua từng đối tượng object 
+                for (var i = 0; i < object.length; i++){
+                    // Thực hiện đổi màu
+                    // nếu có class red thì đổi thành yello
+                    // nếu có calss yellow thì đổi thành red
+                    if ($(object[i]).hasClass('red')){
+                        $(object[i]).removeClass('red').addClass('yellow');
+                    }
+                    else if ($(object[i]).hasClass('yellow')){
+                        $(object[i]).removeClass('yellow').addClass('red');
+                    }
+                }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <input type="button" value="Đảo Ngược Màu" id="button-dao-nguoc"/>
+    </body>
+</html>
